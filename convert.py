@@ -78,8 +78,7 @@ def convert_with_mineru(file_path: Path):
         print(f"目标格式: {target_ext}")
 
         try:
-            result = subprocess.run(cmd, capture_output=True, text=True,
-                                    encoding="utf-8", errors="replace")
+            result = subprocess.run(cmd)
             if result.returncode != 0:
                 print(f"\n[失败] MinerU 返回错误码: {result.returncode}")
                 return
